@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, Box, VStack, Text, Badge, Icon } from "@chakra-ui/react";
+import { Card, Box, VStack, Text, Badge, Icon, Image } from "@chakra-ui/react";
 import { useColorModeValue } from "../ui/color-mode";
 import { FaPlay } from "react-icons/fa";
 import type { ResourceCard as ResourceCardType } from "../../types";
@@ -26,27 +26,15 @@ const ResourceCard: React.FC<ResourceCardProps> = ({ card }) => {
       transition="all 0.3s ease"
       cursor="pointer"
     >
-      {/* Blob SVG Header with Icon */}
-      <Box position="relative" h="120px" overflow="hidden">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 400 120"
-          preserveAspectRatio="none"
-          width="100%"
-          height="100%"
-          style={{ display: "block" }}
-        >
-          <path
-            d="M0,0 C150,100 250,-50 400,50 L400,0 L0,0 Z"
-            fill={`url(#grad-${card.id})`}
-          />
-          <defs>
-            <linearGradient id={`grad-${card.id}`} x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stopColor={card.bgGradient.split(",")[0].replace("linear(", "").trim()} />
-              <stop offset="100%" stopColor={card.bgGradient.split(",")[1]?.replace(")", "").trim() || card.bgGradient} />
-            </linearGradient>
-          </defs>
-        </svg>
+      {/* SVG Header */}
+      <Box position="relative" h="160px" overflow="hidden">
+        <Image
+          src={card.svgPath} // new field in your card object
+          alt={`${card.type} blob`}
+          objectFit="cover"
+          w="100%"
+          h="100%"
+        />
 
         {/* Top-right icon */}
         <Box
@@ -96,12 +84,7 @@ const ResourceCard: React.FC<ResourceCardProps> = ({ card }) => {
       {/* Body */}
       <Card.Body p={6}>
         <VStack align="stretch" spaceY={3}>
-          <Text
-            fontSize="18px"
-            fontWeight="600"
-            color="gray.800"
-            lineHeight="1.4"
-          >
+          <Text fontSize="18px" fontWeight="600" color="gray.800" lineHeight="1.4">
             {card.title}
           </Text>
           <Text fontSize="14px" color="gray.500">

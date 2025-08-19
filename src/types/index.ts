@@ -4,8 +4,9 @@ export interface ResourceCard {
   topic: string;
   category: string;
   type: 'link' | 'video' | 'pdf' | 'doc';
-  bgGradient: string;
+  bgGradient?: string;
   icon: any;
+  svgPath?: string;
 }
 
 export interface FilterState {

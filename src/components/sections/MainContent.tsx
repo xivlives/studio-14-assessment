@@ -21,8 +21,9 @@ const MainContent: React.FC = () => {
       topic: "Sample Topic",
       category: "Secure Base",
       type: "link",
-      bgGradient: "linear(to-r, #DC143C, #FF69B4)",
-      icon: FaExternalLinkAlt
+      bgGradient: "#E00027",
+      icon: FaExternalLinkAlt,
+      svgPath: "assets/blobs/red_blob.svg"
     },
     {
       id: 2,
@@ -30,8 +31,9 @@ const MainContent: React.FC = () => {
       topic: "Sample Topic", 
       category: "Secure Base",
       type: "video",
-      bgGradient: "linear(45deg, #1DD1A1, #00CED1)",
-      icon: FaPlay
+      bgGradient: "#17E4A1",
+      icon: FaPlay,
+      svgPath: "assets/blobs/cyan_blob.svg"
     },
     {
       id: 3,
@@ -39,8 +41,9 @@ const MainContent: React.FC = () => {
       topic: "Sample Topic",
       category: "Secure Base", 
       type: "link",
-      bgGradient: "linear(45deg, #DC143C, #FF1493)",
-      icon: FaExternalLinkAlt
+      bgGradient: "#E00027",
+      icon: FaExternalLinkAlt,
+      svgPath: "assets/blobs/red_blob.svg"
     },
     {
       id: 4,
@@ -48,8 +51,9 @@ const MainContent: React.FC = () => {
       topic: "Sample Topic",
       category: "Wellbeing",
       type: "video", 
-      bgGradient: "linear(45deg, #FF4500, #FF6347)",
-      icon: FaPlay
+      bgGradient: "#FF603E",
+      icon: FaPlay,
+      svgPath: "assets/blobs/orange_blob.svg"
     },
     {
       id: 5,
@@ -57,8 +61,9 @@ const MainContent: React.FC = () => {
       topic: "Sample Topic",
       category: "Secure Base",
       type: "pdf",
-      bgGradient: "linear(45deg, #FFD700, #FFA500)",
-      icon: FaFilePdf
+      bgGradient: " #FFE500",
+      icon: FaFilePdf,
+      svgPath: "assets/blobs/yellow_blob.svg"
     },
     {
       id: 6,
@@ -66,8 +71,9 @@ const MainContent: React.FC = () => {
       topic: "Sample Topic",
       category: "Secure Base", 
       type: "pdf",
-      bgGradient: "linear(45deg, #87CEEB, #4169E1)",
-      icon: FaFilePdf
+      bgGradient: "#56CCF2",
+      icon: FaFilePdf,
+      svgPath: "assets/blobs/aqua_blob.svg"
     }
   ];
 
