@@ -21,6 +21,9 @@ export function appReducer(state: AppState, action: AppAction): AppState {
     
     case 'RESET_FILTERS':
       return { ...state, filters: initialFilters };
+
+    case 'TOGGLE_EMPLOYEE':
+      return { ...state, isEmployee: !state.isEmployee };
     
     default:
       return state;

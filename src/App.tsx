@@ -1,20 +1,35 @@
 import React from "react";
-import { Box } from "@chakra-ui/react";
-import { AppProvider } from "./contexts";
-import Header from "./components/sections/header";
-import HeroSection from "./components/sections/HeroSection";
-import MainContent from "./components/sections/MainContent";
 import { Provider } from "./components/ui/provider";
+import { AppProvider } from "./contexts";
+import {
+  createBrowserRouter,
+  createRoutesFromElements,
+  Navigate,
+  Route,
+  RouterProvider,
+} from "react-router-dom";
+
+import RootLayout from "./layouts/RootLayout";
+import Resources from "./pages/Resources";
+import Dashboard from "./pages/Dashboard";
+import Toolkit from "./pages/Toolkits";
+
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    <Route path="/" element={<RootLayout />}>
+      <Route index element={<Navigate to="/dashboard" replace />} /> {/* default page */}
+      <Route path="resources" element={<Resources />} />
+      <Route path="dashboard" element={<Dashboard />} />
+      <Route path="toolkit" element={<Toolkit />} />
+    </Route>
+  )
+);
 
 const App: React.FC = () => {
   return (
     <Provider>
       <AppProvider>
-        <Box as="main" minHeight="100vh" minWidth="100vw" bg="white">
-          <Header />
-          <HeroSection />
-          <MainContent />
-        </Box>
+        <RouterProvider router={router} />
       </AppProvider>
     </Provider>
   );

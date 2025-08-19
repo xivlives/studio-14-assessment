@@ -20,7 +20,7 @@ const HeroSection: React.FC = () => {
       <VStack gap={8} maxW="1400px" mx="auto">
         {/* Title */}
         <Heading
-          fontSize={{ base: '48px', md: '64px' }}
+          fontSize={{ base: '44px', md: '62px' }}
           fontWeight="700"
           color="gray.800"
           textAlign="center"

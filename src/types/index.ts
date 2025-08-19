@@ -27,6 +27,7 @@ export interface AppState {
   searchQuery: string;
   filters: FilterState;
   resources: ResourceCard[];
+  isEmployee: boolean;
 }
 
 export interface User {
