@@ -29,7 +29,7 @@ const ResourceCard: React.FC<ResourceCardProps> = ({ card }) => {
       {/* SVG Header */}
       <Box position="relative" h="160px" overflow="hidden">
         <Image
-          src={card.svgPath} // new field in your card object
+          src={card.svgPath}
           alt={`${card.type} blob`}
           objectFit="cover"
           w="100%"

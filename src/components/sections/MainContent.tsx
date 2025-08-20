@@ -93,7 +93,7 @@ const MainContent: React.FC = () => {
       card.title.toLowerCase().includes(state.searchQuery.toLowerCase()) ||
       card.topic.toLowerCase().includes(state.searchQuery.toLowerCase());
 
-    // Add your filter logic here based on state.filters
+    // note filter logic can be added here for more functionality
     return matchesSearch;
   });
 
@@ -152,7 +152,7 @@ const MainContent: React.FC = () => {
             alignItems="center"
             justifyContent="center"
           >
-            {/* Just the hamburger icon */}
+            {/* hamburger icon */}
             <Box display="flex" flexDirection="column" gap="4px">
               <Box w="22px" h="2px" bg="gray.700" borderRadius="sm" />
               <Box w="18px" h="2px" bg="gray.700" borderRadius="sm" />

@@ -102,7 +102,6 @@ const Header = () => {
 
         {/* Right Section - Desktop Only */}
         <HStack gap={6} align="center" display={{ base: "none", md: "flex" }}>
-          {/* Switch to Employee */}
           <Switch.Root
             size="md"
             colorPalette="blue"
