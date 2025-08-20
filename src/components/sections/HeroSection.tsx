@@ -14,29 +14,31 @@ const HeroSection: React.FC = () => {
   return (
     <Box
       bg={bgColor}
-      py={16}
-      px={8}
+      py={{ base: 12, md: 16 }}
+      px={{ base: 4, md: 8 }}
     >
       <VStack gap={8} maxW="1400px" mx="auto">
         {/* Title */}
         <Heading
-          fontSize={{ base: '44px', md: '62px' }}
+          fontSize={{ base: '36px', md: '44px', lg: '62px' }}
           fontWeight="700"
           color="gray.800"
           textAlign="center"
           lineHeight="1.1"
+          px={{ base: 4, md: 0 }}
         >
           Resources
         </Heading>
 
         {/* Description */}
         <Text
-          fontSize="18px"
+          fontSize={{ base: '16px', md: '18px' }}
           color="gray.600"
           textAlign="center"
-          maxW="600px"
+          maxW={{ base: '90%', md: '600px' }}
           lineHeight="1.6"
           fontWeight="400"
+          px={{ base: 4, md: 0 }}
         >
           Consectetur adipiscing elit duis tristique sollicitudin nibh sit amet commodo
           nulla facilisi nullam vehicula ipsum a arcu cursus vitae congue

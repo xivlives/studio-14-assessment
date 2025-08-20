@@ -2,7 +2,6 @@ import React from 'react';
 import {
   Box,
   InputGroup,
-  InputElement,
   Input,
 } from '@chakra-ui/react';
 import { useColorModeValue } from '../ui/color-mode';
@@ -19,13 +18,9 @@ const SearchBar: React.FC = () => {
   };
 
   return (
-    <Box w="100%" maxW="800px">
+    <Box w="100%" maxW={{ base: '90%', md: '800px' }}>
       <InputGroup
-        startElement={
-          <InputElement pointerEvents="none" pl={10}>
-            <LuSearch size={20} color="black" style={{ marginRight: '6px' }} />
-          </InputElement>
-        }
+        startElement={<LuSearch size={20} color="black" />}
       >
         <Input
           placeholder="Search by title or keyword"
@@ -36,7 +31,7 @@ const SearchBar: React.FC = () => {
           borderColor={borderColor}
           borderRadius="8px"
           fontSize="16px"
-          h="56px"
+          h={{ base: '48px', md: '56px' }}
           color="gray.800"
           _placeholder={{
             color: 'gray.600',
