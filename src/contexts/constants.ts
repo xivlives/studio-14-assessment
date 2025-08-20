@@ -18,5 +18,5 @@ export const initialState: AppState = {
   searchQuery: '',
   filters: initialFilters,
   resources: [],
-  isEmployee: true,
+  isEmployee: false,
 };

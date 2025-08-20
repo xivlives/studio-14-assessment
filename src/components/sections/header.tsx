@@ -9,7 +9,7 @@ import {
 } from "@chakra-ui/react";
 import { Switch } from "@chakra-ui/react";
 import { useColorModeValue } from "../ui/color-mode";
-import { FaBars, } from "react-icons/fa6";
+import { FaBars } from "react-icons/fa6";
 import { Avatar } from "@chakra-ui/react";
 import { NavLink } from "react-router-dom";
 import { useApp } from "../../hooks";
@@ -47,50 +47,17 @@ const Header = () => {
       >
         {/* Logo Section */}
         <HStack gap={2}>
-          <Box position="relative">
-            <Flex align="center" position="relative">
-              <Box
-                w="12px"
-                h="12px"
-                bg="#FF6B35"
-                borderRadius="full"
-                position="absolute"
-                top="2px"
-                left="2px"
-              />
-              <Box
-                w="12px"
-                h="12px"
-                bg="#4285F4"
-                borderRadius="full"
-                position="absolute"
-                top="2px"
-                right="2px"
-              />
-              <Box
-                w="12px"
-                h="12px"
-                bg="#34A853"
-                borderRadius="full"
-                position="absolute"
-                bottom="2px"
-                left="2px"
-              />
-              <Box
-                w="12px"
-                h="12px"
-                bg="#1DD1A1"
-                borderRadius="full"
-                position="absolute"
-                bottom="2px"
-                right="2px"
-              />
-              <Box w="28px" h="28px" />
-            </Flex>
+          <Box w={{ base: "85px", md: "140px" }}>
+            <img
+              src="/logo.svg"
+              alt="Logo"
+              style={{
+                width: "30%",
+                height: "auto",
+                objectFit: "contain",
+              }}
+            />
           </Box>
-          <Text fontSize="20px" fontWeight="bold" color="gray.800" ml={2}>
-            LOGO
-          </Text>
         </HStack>
 
         {/* Desktop Nav */}
@@ -134,8 +101,28 @@ const Header = () => {
         </HStack>
 
         {/* Right Section - Desktop Only */}
-        <HStack gap={4} display={{ base: "flex", md: "none" }} align="center">
+        <HStack gap={6} align="center" display={{ base: "none", md: "flex" }}>
           {/* Switch to Employee */}
+          <Switch.Root
+            size="md"
+            colorPalette="blue"
+            checked={state.isEmployee}
+            onCheckedChange={() => dispatch({ type: "TOGGLE_EMPLOYEE" })}
+          >
+            <Switch.HiddenInput />
+            <Switch.Control />
+          </Switch.Root>
+          <Text color="gray.800">switch to employee</Text>
+
+          {/* Avatar */}
+          <Avatar.Root size="sm" colorPalette="teal">
+            <Avatar.Fallback name="Jonathan" />
+          </Avatar.Root>
+        </HStack>
+
+        {/* Right Section - Mobile Only */}
+        <HStack gap={4} display={{ base: "flex", md: "none" }} align="center">
+          {/* Toggle */}
           <Switch.Root
             size="md"
             colorPalette="blue"
